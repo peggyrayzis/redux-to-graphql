@@ -1,0 +1,32 @@
+{
+  "name": "redux-to-graphql-client",
+  "version": "0.0.1",
+  "private": true,
+  "devDependencies": {
+    "react-scripts": "2.1.8"
+  },
+  "dependencies": {
+    "apollo-boost": "^0.3.1",
+    "graphql": "^14.2.1",
+    "prop-types": "^15.6.1",
+    "react": "^16.8.6",
+    "react-apollo": "^2.5.3",
+    "react-dom": "^16.8.6",
+    "react-redux": "^5.0.7",
+    "redux": "^3.5.2",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.1.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "eject": "react-scripts eject",
+    "test": "react-scripts test --env=node --passWithNoTests"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}
