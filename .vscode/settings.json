@@ -1,0 +1,30 @@
+{
+  "peacock.affectActivityBar": true,
+  "peacock.elementAdjustments": {
+    "activityBar": "none",
+    "statusBar": "none",
+    "titleBar": "none"
+  },
+  "editor.fontWeight": "500",
+  "browser-preview.startUrl": "http://localhost:3001/",
+  "workbench.colorCustomizations": {
+    "list.activeSelectionForeground": "#80CBC4",
+    "list.inactiveSelectionForeground": "#80CBC4",
+    "list.highlightForeground": "#80CBC4",
+    "scrollbarSlider.activeBackground": "#80CBC450",
+    "editorSuggestWidget.highlightForeground": "#80CBC4",
+    "textLink.foreground": "#80CBC4",
+    "progressBar.background": "#80CBC4",
+    "pickerGroup.foreground": "#80CBC4",
+    "tab.activeBorder": "#80CBC4",
+    "activityBar.background": "#10cbc4",
+    "activityBar.foreground": "#15202b",
+    "activityBar.inactiveForeground": "#15202b99",
+    "activityBarBadge.background": "#290b9f",
+    "activityBarBadge.foreground": "#e7e7e7",
+    "titleBar.activeBackground": "#10cbc4",
+    "titleBar.inactiveBackground": "#10cbc499",
+    "titleBar.activeForeground": "#15202b",
+    "titleBar.inactiveForeground": "#15202b99"
+  }
+}
