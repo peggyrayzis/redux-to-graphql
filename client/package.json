@@ -3,13 +3,18 @@
   "version": "0.0.1",
   "private": true,
   "devDependencies": {
+    "@types/graphql": "^14.2.0",
+    "@types/node": "^11.13.4",
+    "@types/react": "^16.8.13",
+    "@types/react-dom": "^16.8.4",
+    "apollo": "^2.8.3",
     "cross-env": "^5.2.0",
-    "react-scripts": "2.1.8"
+    "react-scripts": "2.1.8",
+    "typescript": "^3.4.3"
   },
   "dependencies": {
     "apollo-boost": "^0.3.1",
     "graphql": "^14.2.1",
-    "prop-types": "^15.6.1",
     "react": "^16.8.6",
     "react-apollo": "^2.5.3",
     "react-dom": "^16.8.6"
@@ -18,7 +23,8 @@
     "start": "cross-env PORT=3001 react-scripts start",
     "build": "react-scripts build",
     "eject": "react-scripts eject",
-    "test": "react-scripts test --env=node --passWithNoTests"
+    "test": "react-scripts test --env=node --passWithNoTests",
+    "codegen:watch": "npx apollo client:codegen --target=typescript --watch"
   },
   "browserslist": [
     ">0.2%",
