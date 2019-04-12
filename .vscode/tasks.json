@@ -8,6 +8,17 @@
       "script": "start",
       "path": "server/",
       "problemMatcher": []
+    },
+    {
+      "type": "npm",
+      "script": "codegen:watch",
+      "path": "client/",
+      "runOptions": { "runOn": "folderOpen" }
+    },
+    {
+      "type": "npm",
+      "script": "start",
+      "path": "client/"
     }
   ]
 }
