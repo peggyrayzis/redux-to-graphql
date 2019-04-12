@@ -6,7 +6,9 @@ type Props = {
 };
 
 const Posts: React.FC<Props> = ({ posts }) => (
-  <ul>{posts.map(post => post && <li key={post.title}>{post.title}</li>)}</ul>
+  <ul>
+    {posts.map(post => post && <li key={post.title}>{`${post.title}`}</li>)}
+  </ul>
 );
 
 export default Posts;
