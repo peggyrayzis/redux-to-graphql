@@ -13,6 +13,9 @@ const typeDefs = gql`
   type Post {
     title: String!
     author: String!
+    """
+    The number of upvotes a post has recieved
+    """
     ups: Int!
   }
 `;

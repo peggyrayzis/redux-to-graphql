@@ -14,7 +14,6 @@ export interface GetSubreddit_subreddit_posts {
 export interface GetSubreddit_subreddit {
   __typename: "Subreddit";
   posts: (GetSubreddit_subreddit_posts | null)[];
-  lastUpdated: string;
 }
 
 export interface GetSubreddit {

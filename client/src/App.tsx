@@ -7,17 +7,7 @@ import Posts from './components/Posts';
 
 import * as ApolloTypes from './__generated__/GetSubreddit';
 
-const clientSchema = gql`
-  extend type Subreddit {
-    lastUpdated: String!
-  }
-`;
-
-const resolvers = {
-  Subreddit: {
-    lastUpdated: () => new Date(Date.now()).toLocaleTimeString(),
-  },
-};
+const generateDate = () => new Date(Date.now()).toLocaleTimeString();
 
 const GET_SUBREDDIT = gql`
   query GetSubreddit($name: String!) {
@@ -25,7 +15,6 @@ const GET_SUBREDDIT = gql`
       posts {
         title
       }
-      lastUpdated @client
     }
   }
 `;
@@ -40,8 +29,6 @@ const App: React.FC = () => {
       notifyOnNetworkStatusChange
     >
       {({ data, loading, error, refetch, networkStatus, client }) => {
-        client.addResolvers(resolvers);
-
         const refetching = networkStatus === 4;
 
         if (loading && !refetching) return <h2>Loading...</h2>;
@@ -56,9 +43,7 @@ const App: React.FC = () => {
             />
             <p>
               <span>
-                {data &&
-                  `Last updated at ${data.subreddit &&
-                    data.subreddit.lastUpdated}.`}
+                {data && `Last updated at ${data.subreddit && '4:00 PM'}.`}
               </span>
               {!loading && <button onClick={() => refetch()}>Refresh</button>}
             </p>
