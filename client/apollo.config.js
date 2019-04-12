@@ -4,6 +4,7 @@ module.exports = {
       name: 'redux-to-graphql',
       url: 'http://localhost:4000',
       // url: 'https://redux-to-graphql.glitch.me/',
+      includes: ['src/**/*.{ts,tsx,js,jsx}'],
     },
   },
 };

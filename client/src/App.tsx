@@ -5,6 +5,8 @@ import { gql } from 'apollo-boost';
 import Picker from './components/Picker';
 import Posts from './components/Posts';
 
+import * as ApolloTypes from './__generated__/GetSubreddit';
+
 const clientSchema = gql`
   extend type Subreddit {
     lastUpdated: String!
@@ -28,11 +30,11 @@ const GET_SUBREDDIT = gql`
   }
 `;
 
-export default function App() {
+const App: React.FC = () => {
   const [selectedSubreddit, setSelectedSubreddit] = useState('reactjs');
 
   return (
-    <Query
+    <Query<ApolloTypes.GetSubreddit, ApolloTypes.GetSubredditVariables>
       query={GET_SUBREDDIT}
       variables={{ name: selectedSubreddit }}
       notifyOnNetworkStatusChange
@@ -53,16 +55,23 @@ export default function App() {
               options={['reactjs', 'frontend']}
             />
             <p>
-              <span>{`Last updated at ${data.subreddit &&
-                data.subreddit.lastUpdated}.`}</span>
+              <span>
+                {data &&
+                  `Last updated at ${data.subreddit &&
+                    data.subreddit.lastUpdated}.`}
+              </span>
               {!loading && <button onClick={() => refetch()}>Refresh</button>}
             </p>
             <div style={{ opacity: refetching ? 0.5 : 1 }}>
-              <Posts posts={data.subreddit && data.subreddit.posts} />
+              <Posts
+                posts={data && data.subreddit ? data.subreddit.posts : []}
+              />
             </div>
           </div>
         );
       }}
     </Query>
   );
-}
+};
+
+export default App;
