@@ -6,7 +6,7 @@ import { ApolloProvider } from '@apollo/react-hooks';
 import App from './App';
 
 const client = new ApolloClient({
-  uri: 'http://localhost:4000',
+  uri: 'https://m3507x64l8.sse.codesandbox.io/',
   resolvers: {},
 });
 
