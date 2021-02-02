@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
+import { useQuery, gql } from '@apollo/client';
 import { QueryResult } from '@apollo/react-common';
-import { useQuery } from '@apollo/react-hooks';
-import { gql } from 'apollo-boost';
 
 import Picker from './components/Picker';
 import Posts from './components/Posts';
@@ -16,8 +15,8 @@ const clientSchema = gql`
 
 const resolvers = {
   Subreddit: {
-    lastUpdated: () => new Date(Date.now()).toLocaleTimeString(),
-  },
+    lastUpdated: () => new Date(Date.now()).toLocaleTimeString()
+  }
 };
 
 const GET_SUBREDDIT = gql`
@@ -39,13 +38,13 @@ const App: React.FC = () => {
     error,
     refetch,
     networkStatus,
-    client,
+    client
   }: QueryResult<
     ApolloTypes.GetSubreddit,
     ApolloTypes.GetSubredditVariables
   > = useQuery(GET_SUBREDDIT, {
     variables: { name: selectedSubreddit },
-    notifyOnNetworkStatusChange: true,
+    notifyOnNetworkStatusChange: true
   });
 
   client.addResolvers(resolvers);
